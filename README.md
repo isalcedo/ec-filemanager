@@ -11,13 +11,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require isalcedo/yii2-filemanager "dev-master"
+php composer.phar require isalcedo/ec-filemanager "dev-master"
 ```
 
 or add
 
 ```
-"isalcedo/yii2-filemanager": "dev-master"
+"isalcedo/ec-filemanager": "dev-master"
 ```
 
 to the require section of your `composer.json` file.

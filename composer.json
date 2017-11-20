@@ -1,5 +1,5 @@
 {
-    "name": "isalcedo/yii2-filemanager",
+    "name": "isalcedo/ec-filemanager",
     "type": "yii2-extension",
     "description": "A file manager for Yii2. Allow user to manage files from any location as well as browsing files within the application.",
     "keywords": ["yii2", "file", "manager", "filemanager", "browse", "widget"],
@@ -13,8 +13,8 @@
     ],
     "minimum-stability": "stable",
     "support": {
-        "source": "https://github.com/isalcedo/yii2-filemanager",
-        "issues": "https://github.com/isalcedo/yii2-filemanager/issues"
+        "source": "https://github.com/isalcedo/ec-filemanager",
+        "issues": "https://github.com/isalcedo/ec-filemanager/issues"
     },
     "require": {
         "php": ">=5.4.0",
