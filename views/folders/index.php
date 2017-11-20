@@ -32,9 +32,17 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'path',
                     'value' => function ($model) {
                         $path = $model->path;
-                        if ($model->storage == 'local') {
-                            $path = Yii::getAlias('@webroot') . '/' . $model['path'];
-                        }
+	                    $module = Yii::$app->controller->module;
+
+	                    if ($model->storage == 'local') {
+		                    if ($module->public_path){
+			                    $path = $module->public_path . $model['path'];
+		                    }
+		                    else
+		                    {
+			                    $path = Yii::getAlias('@webroot') . '/' . $model['path'];
+		                    }
+	                    }
                         return $path;
                     }
                 ],
