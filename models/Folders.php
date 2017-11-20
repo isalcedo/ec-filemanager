@@ -1,6 +1,6 @@
 <?php
 
-namespace dpodium\filemanager\models;
+namespace isalcedo\filemanager\models;
 
 use Yii;
 

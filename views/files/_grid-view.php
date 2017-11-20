@@ -1,7 +1,7 @@
 <?php
 
-use dpodium\filemanager\widgets\Gallery;
-use dpodium\filemanager\components\Filemanager;
+use isalcedo\filemanager\widgets\Gallery;
+use isalcedo\filemanager\components\Filemanager;
 use yii\helpers\ArrayHelper;
 
 $colClass = ($uploadType == Filemanager::TYPE_MODAL) ? 'col-sm-6 col-xs-12' : 'col-xs-12';

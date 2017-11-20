@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 if ($model->dimension) {
                     $fileType = 'image';
                 }
-                echo dpodium\filemanager\components\Filemanager::getThumbnail($fileType, $model->object_url . $model->src_file_name, "250px", "250px");
+                echo isalcedo\filemanager\components\Filemanager::getThumbnail($fileType, $model->object_url . $model->src_file_name, "250px", "250px");
                 ?>
             </div>
         <?php } ?>

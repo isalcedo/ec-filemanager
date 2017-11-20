@@ -1,5 +1,5 @@
 {
-    "name": "dpodium/yii2-filemanager",
+    "name": "isalcedo/yii2-filemanager",
     "type": "yii2-extension",
     "description": "A file manager for Yii2. Allow user to manage files from any location as well as browsing files within the application.",
     "keywords": ["yii2", "file", "manager", "filemanager", "browse", "widget"],
@@ -7,14 +7,14 @@
     "authors": [
         {
             "name": "June See",
-            "email": "june.see@dpodium.com",
-            "homepage": "http://www.dpodium.com"
+            "email": "june.see@isalcedo.com",
+            "homepage": "http://www.isalcedo.com"
         }
     ],
     "minimum-stability": "stable",
     "support": {
-        "source": "https://github.com/dpodium/yii2-filemanager",
-        "issues": "https://github.com/dpodium/yii2-filemanager/issues"
+        "source": "https://github.com/isalcedo/yii2-filemanager",
+        "issues": "https://github.com/isalcedo/yii2-filemanager/issues"
     },
     "require": {
         "php": ">=5.4.0",
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "dpodium\\filemanager\\": ""
+            "isalcedo\\filemanager\\": ""
         }
     }
 }

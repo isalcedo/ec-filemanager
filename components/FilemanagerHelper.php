@@ -1,12 +1,12 @@
 <?php
 
-namespace dpodium\filemanager\components;
+namespace isalcedo\filemanager\components;
 
 use yii\helpers\Html;
 
 class FilemanagerHelper {
 
-    const CACHE_TAG = 'dpodium.filemanager.file';
+    const CACHE_TAG = 'isalcedo.filemanager.file';
 
     /**
      * 

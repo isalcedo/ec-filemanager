@@ -1,12 +1,12 @@
 <?php
 
-namespace dpodium\filemanager\widgets;
+namespace isalcedo\filemanager\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\bootstrap\Tabs;
-use dpodium\filemanager\FilemanagerAsset;
+use isalcedo\filemanager\FilemanagerAsset;
 
 /**
  * Description of FileBrowse
@@ -88,7 +88,7 @@ class FileBrowse extends \yii\widgets\InputWidget {
             } else {
                 $src = $file->object_url . $file->src_file_name;
             }
-            $gridBox = new \dpodium\filemanager\components\GridBox([
+            $gridBox = new \isalcedo\filemanager\components\GridBox([
                 'owner' => $this,
                 'src' => $src,
                 'fileType' => $fileType,

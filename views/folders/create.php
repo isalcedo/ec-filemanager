@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model dpodium\filemanager\models\Folders */
+/* @var $model isalcedo\filemanager\models\Folders */
 
 $this->title = Yii::t('filemanager', 'Create Folder');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('filemanager', 'Media Folder'), 'url' => ['index']];

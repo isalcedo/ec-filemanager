@@ -1,6 +1,6 @@
 <?php
 
-namespace dpodium\filemanager\controllers;
+namespace isalcedo\filemanager\controllers;
 
 use Yii;
 use yii\web\Controller;
@@ -11,15 +11,15 @@ use yii\helpers\Json;
 use yii\web\UploadedFile;
 use yii\helpers\ArrayHelper;
 use yii\imagine\Image;
-//use dpodium\filemanager\models\Files;
-//use dpodium\filemanager\models\FilesSearch;
-//use dpodium\filemanager\models\Folders;
-//use dpodium\filemanager\models\FilesRelationship;
-//use dpodium\filemanager\models\FilesTag;
-use dpodium\filemanager\components\Filemanager;
-use dpodium\filemanager\FilemanagerAsset;
-use dpodium\filemanager\components\S3;
-use dpodium\filemanager\widgets\Gallery;
+//use isalcedo\filemanager\models\Files;
+//use isalcedo\filemanager\models\FilesSearch;
+//use isalcedo\filemanager\models\Folders;
+//use isalcedo\filemanager\models\FilesRelationship;
+//use isalcedo\filemanager\models\FilesTag;
+use isalcedo\filemanager\components\Filemanager;
+use isalcedo\filemanager\FilemanagerAsset;
+use isalcedo\filemanager\components\S3;
+use isalcedo\filemanager\widgets\Gallery;
 
 /**
  * FilesController implements the CRUD actions for Files model.
@@ -356,7 +356,7 @@ class FilesController extends Controller {
         $toolArray = [
                 ['tagType' => 'i', 'options' => ['class' => 'fa-icon fa fa-times fm-remove', 'title' => \Yii::t('filemanager', 'Remove')]]
         ];
-        $gridBox = new \dpodium\filemanager\components\GridBox([
+        $gridBox = new \isalcedo\filemanager\components\GridBox([
             'src' => $src,
             'fileType' => $fileType,
             'toolArray' => $toolArray,

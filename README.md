@@ -11,21 +11,21 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require dpodium/yii2-filemanager "dev-master"
+php composer.phar require isalcedo/yii2-filemanager "dev-master"
 ```
 
 or add
 
 ```
-"dpodium/yii2-filemanager": "dev-master"
+"isalcedo/yii2-filemanager": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
 
 Execute migration here:
 ```
-yii migrate --migrationPath=@dpodium/filemanager/migrations
-yii migrate/down --migrationPath=@dpodium/filemanager/migrations
+yii migrate --migrationPath=@isalcedo/filemanager/migrations
+yii migrate/down --migrationPath=@isalcedo/filemanager/migrations
 ```
 
 Usage
@@ -42,7 +42,7 @@ return [
                 'class' => '\kartik\grid\Module'
             ],
             'filemanager' => [
-                'class' => 'dpodium\filemanager\Module',
+                'class' => 'isalcedo\filemanager\Module',
                 'storage' => ['local'],
                 // This configuration will be used in 'filemanager/files/upload'
                 // To support dynamic multiple upload
@@ -76,7 +76,7 @@ return [
                 'class' => '\kartik\grid\Module'
             ],
             'filemanager' => [ // do not change module to other name
-                'class' => 'dpodium\filemanager\Module',
+                'class' => 'isalcedo\filemanager\Module',
                 // This configuration will be used in 'filemanager/files/upload'
                 // To support dynamic multiple upload
                 // Default multiple upload is true, max file to upload is 10
@@ -124,7 +124,7 @@ In order to use File Manager Browse feature:
 ```php
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
-    use dpodium\filemanager\widgets\FileBrowse;
+    use isalcedo\filemanager\widgets\FileBrowse;
 
     // This is just an example to upload a banner
     $form = ActiveForm::begin();

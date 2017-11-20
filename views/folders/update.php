@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model dpodium\filemanager\models\Folders */
+/* @var $model isalcedo\filemanager\models\Folders */
 
 $this->title = Yii::t('filemanager', 'Update Folder').': ' . ' ' . $model->category;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('filemanager', 'Media Folder'), 'url' => ['index']];

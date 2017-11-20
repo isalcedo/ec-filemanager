@@ -1,6 +1,6 @@
 <?php
 
-namespace dpodium\filemanager\components;
+namespace isalcedo\filemanager\components;
 
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;

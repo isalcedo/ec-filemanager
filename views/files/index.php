@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
-/* @var $model dpodium\filemanager\models\FilesSearchs */
+/* @var $model isalcedo\filemanager\models\FilesSearchs */
 
 $this->title = Yii::t('filemanager', 'Media Gallery');
 $this->params['breadcrumbs'][] = $this->title;

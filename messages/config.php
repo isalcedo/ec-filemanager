@@ -1,7 +1,7 @@
 <?php
 
 /**
- * run ./yii message/extract @dpodium/filemanager/messages/config.php
+ * run ./yii message/extract @isalcedo/filemanager/messages/config.php
  */
 return [
     // string, required, root directory of all source files

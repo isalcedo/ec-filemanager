@@ -1,6 +1,6 @@
 <?php
 
-namespace dpodium\filemanager\components;
+namespace isalcedo\filemanager\components;
 
 use yii\base\Object;
 use yii\helpers\Html;

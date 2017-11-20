@@ -1,11 +1,11 @@
 <?php
 
-use dpodium\filemanager\FilemanagerAsset;
+use isalcedo\filemanager\FilemanagerAsset;
 use kartik\widgets\ActiveForm;
 use kartik\widgets\FileInput;
 use yii\helpers\Url;
 
-if ($uploadType == \dpodium\filemanager\components\Filemanager::TYPE_MODAL) {
+if ($uploadType == \isalcedo\filemanager\components\Filemanager::TYPE_MODAL) {
     FilemanagerAsset::register($this);
 }
 

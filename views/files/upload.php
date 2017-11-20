@@ -1,6 +1,6 @@
 <?php
 
-use dpodium\filemanager\components\Filemanager;
+use isalcedo\filemanager\components\Filemanager;
 use yii\helpers\Html;
 
 $this->title = Yii::t('filemanager', 'Upload New Media');

@@ -1,9 +1,9 @@
 <?php
 
-namespace dpodium\filemanager\models;
+namespace isalcedo\filemanager\models;
 
 use Yii;
-use dpodium\filemanager\models\FilesTag;
+use isalcedo\filemanager\models\FilesTag;
 
 /**
  * This is the model class for table "files_relationship".

@@ -1,11 +1,11 @@
 <?php
 
-namespace dpodium\filemanager\widgets;
+namespace isalcedo\filemanager\widgets;
 
 use yii\helpers\Html;
 use yii\widgets\BaseListView;
-use dpodium\filemanager\FilemanagerAsset;
-use dpodium\filemanager\components\GridBox;
+use isalcedo\filemanager\FilemanagerAsset;
+use isalcedo\filemanager\components\GridBox;
 
 /**
  * Description of Gallery

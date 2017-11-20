@@ -1,13 +1,13 @@
 <?php
 
-namespace dpodium\filemanager\controllers;
+namespace isalcedo\filemanager\controllers;
 
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use dpodium\filemanager\FilemanagerAsset;
+use isalcedo\filemanager\FilemanagerAsset;
 
 /**
  * FoldersController implements the CRUD actions for Folders model.

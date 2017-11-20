@@ -1,6 +1,6 @@
 <?php
 
-namespace dpodium\filemanager;
+namespace isalcedo\filemanager;
 
 use Yii;
 use yii\helpers\BaseFileHelper;
@@ -36,11 +36,11 @@ class Module extends \yii\base\Module {
      * Configure to use own models function
      */
     public $models = [
-        'files' => 'dpodium\filemanager\models\Files',
-        'filesSearch' => 'dpodium\filemanager\models\FilesSearch',
-        'filesRelationship' => 'dpodium\filemanager\models\FilesRelationship',
-        'filesTag' => 'dpodium\filemanager\models\FilesTag',
-        'folders' => 'dpodium\filemanager\models\Folders',
+        'files' => 'isalcedo\filemanager\models\Files',
+        'filesSearch' => 'isalcedo\filemanager\models\FilesSearch',
+        'filesRelationship' => 'isalcedo\filemanager\models\FilesRelationship',
+        'filesTag' => 'isalcedo\filemanager\models\FilesTag',
+        'folders' => 'isalcedo\filemanager\models\Folders',
     ];
     public $acceptedFilesType = [
         'image/jpeg',
@@ -69,7 +69,7 @@ class Module extends \yii\base\Module {
         }
         Yii::$app->i18n->translations['filemanager*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
-            'basePath' => "@dpodium/filemanager/messages"
+            'basePath' => "@isalcedo/filemanager/messages"
         ];
         parent::init();
     }

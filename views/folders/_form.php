@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model dpodium\filemanager\models\Folders */
+/* @var $model isalcedo\filemanager\models\Folders */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

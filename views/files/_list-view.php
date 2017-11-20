@@ -23,7 +23,7 @@ use kartik\grid\GridView;
                         if ($model->dimension) {
                             $fileType = 'image';
                         }
-                        return dpodium\filemanager\components\Filemanager::getThumbnail($fileType, $model->getFileUrl(true));
+                        return isalcedo\filemanager\components\Filemanager::getThumbnail($fileType, $model->getFileUrl(true));
                     }
                 ],
                 'caption',

@@ -1,12 +1,12 @@
 <?php
 
-namespace dpodium\filemanager;
+namespace isalcedo\filemanager;
 
 use yii\web\AssetBundle;
 
 class FilemanagerAsset extends AssetBundle {
 
-    public $sourcePath = '@dpodium/filemanager/assets';
+    public $sourcePath = '@isalcedo/filemanager/assets';
     public $css = [
         'css/filemanager.css'
     ];
