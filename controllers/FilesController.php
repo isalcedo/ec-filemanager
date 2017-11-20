@@ -194,8 +194,8 @@
 			}
 			else
 			{
-				$file  = Yii::getAlias($model->storage_id) . $model->object_url . $model->src_file_name;
-				$thumb = Yii::getAlias($model->storage_id) . $model->object_url . $model->thumbnail_name;
+				$file  = Yii::getAlias($model->storage_id) . ltrim($model->object_url, '/') . $model->src_file_name;
+				$thumb = Yii::getAlias($model->storage_id) . ltrim($model->object_url, '/') . $model->thumbnail_name;
 
 				if (file_exists($file))
 				{
@@ -246,7 +246,7 @@
 				}
 
 				$model->folder_id = Yii::$app->request->post('uploadTo');
-				$folder           = $folders::find()->select(['path', 'storage'])->where('folder_id=:folder_id', [':folder_id' => $model->folder_id])->one();
+				$folder           = $folders::find()->select(['parent_folder', 'path', 'storage'])->where('folder_id=:folder_id', [':folder_id' => $model->folder_id])->one();
 
 				if (!$folder)
 				{
@@ -279,7 +279,14 @@
 				}
 				$model->mime_type = $file[0]->type;
 				$prefixPath       = !empty(\Yii::$app->getModule('filemanager')->storage['s3']['prefixPath']) ? \Yii::$app->getModule('filemanager')->storage['s3']['prefixPath'] . '/' : '';
-				$model->url       = $prefixPath . $folder->path;
+				if (isset($folder->parent_folder))
+				{
+					$model->url = $prefixPath . $folder->parent_folder . '/' . $folder->path;
+				}
+				else
+				{
+					$model->url = $prefixPath . $folder->path;
+				}
 				//$extension = '.' . $file[0]->getExtension();
 
 				$uploadResult = ['status' => true, 'error_msg' => ''];
@@ -294,15 +301,22 @@
 				}
 				else
 				{
-					$model->object_url = '/' . $folder->path . '/';
-					//Implementing public_path
-					if ($this->module->public_path)
+					if (isset($folder->parent_folder))
 					{
-						$model->storage_id = Yii::getAlias('@webroot'.'/../..'.$this->module->public_path);
+						$model->object_url = '/' . $folder->parent_folder . '/' . $folder->path . '/';
 					}
 					else
 					{
-						$model->storage_id = Yii::getAlias($this->module->directory.'/');
+						$model->object_url = '/' . $folder->path . '/';
+					}
+					//Implementing public_path
+					if ($this->module->public_path)
+					{
+						$model->storage_id = Yii::getAlias('@webroot' . '/../..' . $this->module->public_path);
+					}
+					else
+					{
+						$model->storage_id = Yii::getAlias($this->module->directory . '/');
 					}
 					$this->saveModel($model, $extension, $folder->storage);
 					$uploadResult = $this->uploadToLocal($model, $file[0], $extension);
