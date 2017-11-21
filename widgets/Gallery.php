@@ -68,40 +68,13 @@
 
 				if ($model->dimension)
 				{
-					$module = \Yii::$app->getModule('filemanager');
-					if (!$module->public_path)
-					{
-						$src      = $model->object_url . $model->thumbnail_name;
-						$fileType = 'image';
-					}
-					else
-					{
-						$route = explode('/', $module->public_path);
-						$key   = array_search('public_html', $route);
-						unset($route[$key]);
-						$route  = join('/', $route);
-						$domain = $route . ltrim($model->object_url, '/');
-						$src    = $domain . $model->thumbnail_name;
-						$fileType = 'image';
-					}
+					$src      = $model->object_url . $model->thumbnail_name;
+					$fileType = 'image';
 				}
 				else
 				{
 
-					$module = \Yii::$app->getModule('filemanager');
-					if (!$module->public_path)
-					{
-						$src = $model->object_url . $model->src_file_name;
-					}
-					else
-					{
-						$route = explode('/', $module->public_path);
-						$key   = array_search('public_html', $route);
-						unset($route[$key]);
-						$route  = join('/', $route);
-						$domain = $route . ltrim($model->object_url, '/');
-						$src    = $domain . $model->src_file_name;
-					}
+					$src = $model->object_url . $model->src_file_name;
 				}
 
 				$toolArray = $this->_getToolArray($model->file_id);
