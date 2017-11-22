@@ -11,7 +11,9 @@ class FilemanagerAsset extends AssetBundle {
         'css/filemanager.css'
     ];
     public $js = [
+	    //'js/jstree/jstree.js',
         'js/filemanager.js',
+        'js/folders.js',
     ];
     public $depends = [
         'yii\web\JqueryAsset',

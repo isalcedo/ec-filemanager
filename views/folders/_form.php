@@ -15,15 +15,21 @@
 
 		echo $form->field($model, 'category')->textInput(['maxlength' => true]);
 
+		/*
 		echo $form->field($model, 'parent_folder')->dropDownList(
 		        $model->getFolders(),
                 [
 	                'prompt'=>yii::t('filemanager', '-- Select one')
                 ]
         );
+		*/
     ?>
+	<?=$form->field($model, 'parent_folder')->hiddenInput();?>
+    <div id="folderstree">
+        <?=$model->getFolders();?>
+    </div>
     <p class="help-block">
-        <?= yii::t('filemanager', 'This selection is optional. Just usefull if you need a folders tree. Just 1 level is posible.')?>
+        <?= yii::t('filemanager', 'This selection is optional. Just usefull if you need a folders tree.')?>
     </p>
     <?php
 		echo $form->field($model, 'path')->textInput(['maxlength' => true]);

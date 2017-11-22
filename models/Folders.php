@@ -61,27 +61,99 @@
 			return $this->hasMany(Files::className(), ['folder_id' => 'folder_id']);
 		}
 
+		/*
+			  ["manufacturers_media"]=>
+			  array(2) {
+			    ["fuyue"]=>
+			    array(0) {
+			    }
+			    ["radwag"]=>
+			    string(6) "radwag"
+			  }
+			  ["nivel_1"]=>
+			  array(1) {
+			    ["nivel_2"]=>
+			    array(1) {
+			      ["nivel_3"]=>
+			      string(7) "nivel_3"
+			    }
+			  }
+			  ["product_media"]=>
+			  array(0) {
+			  }
+		 */
+
+
+		private function ToUl($input)
+		{
+			$list = '<ul>';
+			foreach ($input as $key => $value)
+			{
+				$listItem = '';
+				if (is_array($value)) {
+					$listItem = $key;
+					$list .= "<li id='$key'>";
+				} else {
+					$list .= "<li id='$value'>";
+				}
+				$listItem .= (is_array($value) ? $this->ToUl($value) : $value);
+				$list .= "$listItem</li>";
+			}
+			$list .= '</ul>';
+			return $list;
+		}
+
+		private function getInnerFolders($path)
+		{
+			$dir_array   = array();
+			$directories = scandir($path);
+			foreach ($directories as $result)
+			{
+				if ($result != '.' && $result != '..' && is_dir($path . '/' . $result))
+				{
+					$innerResults = scandir($path . '/' . $result);
+
+					foreach ($innerResults as $key => $inner)
+					{
+						if ($inner == '.' || $inner == '..')
+						{
+							if (!is_dir($path . $result . '/' . $inner))
+							{
+								unset($innerResults[$key]);
+							} else {
+								$dir_array[$result] = $this->getInnerFolders($path . '/' . $result);
+							}
+						}
+					}
+
+					if (count($innerResults) > 0)
+					{
+						$dir_array[$result] = $this->getInnerFolders($path . '/' . $result);
+					}
+					else
+					{
+						$dir_array[] = $result;
+					}
+				}
+			}
+
+			return $dir_array;
+		}
+
 		public function getFolders()
 		{
 			$module = Yii::$app->getModule('filemanager');
 			if ($module->public_path)
 			{
-				$dir = Yii::getAlias('@webroot'.'/../..'.$module->public_path);
+				$path = Yii::getAlias('@webroot' . '/../..' . $module->public_path);
 			}
 			else
 			{
-				$dir = Yii::getAlias($module->directory);
+				$path = Yii::getAlias($module->directory);
 			}
-			$results = scandir($dir);
-			$dir_arrays = array();
-			foreach ($results as $result) {
-				if ($result != '.' && $result != '..' && is_dir($dir . '/' . $result)) {
-					$dir_arrays[$result] = $result;
-				}
-			}
+			$dir_arrays = $this->getInnerFolders($path);
 
-			return $dir_arrays;
-
+			return $this->ToUl($dir_arrays);
 		}
 
 	}

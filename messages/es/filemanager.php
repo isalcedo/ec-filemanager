@@ -81,5 +81,5 @@ return [
     'Update Folder' => 'Actualizar directorio',
     'Main folder' => 'Directorio principal',
     '-- Select one' => '-- Seleccione alguno',
-    'This selection is optional. Just usefull if you need a folders tree. Just 1 level is posible.' => 'Esta selección es opcional. Solo es útil si necesitas un árbol de directorios. Sólo es posible 1 nivel.'
+    'This selection is optional. Just usefull if you need a folders tree.' => 'Esta selección es opcional. Solo es útil si necesitas un árbol de directorios.'
 ];
