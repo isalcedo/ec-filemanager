@@ -90,7 +90,6 @@
 				$fileType = $file->mime_type;
 				if ($file->dimension)
 				{
-
 					$module = Yii::$app->getModule('filemanager');
 					if (!$module->public_path)
 					{
@@ -109,7 +108,6 @@
 				}
 				else
 				{
-
 					$module = Yii::$app->getModule('filemanager');
 					if (!$module->public_path)
 					{

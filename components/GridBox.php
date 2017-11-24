@@ -80,12 +80,14 @@
 			$module = \Yii::$app->getModule('filemanager');
 			if ($module->public_path)
 			{
-
 				$route = explode('/', $module->public_path);
 				$key   = array_search('public_html', $route);
 				unset($route[$key]);
-				$route     = join('/', $route);
-				$this->src = '/' . trim($route, '/') . $this->src;
+				$route = join('/', $route);
+				if (strpos($this->src, $route) === false)
+				{
+					$this->src = '/' . trim($route, '/') . $this->src;
+				}
 			}
 			$fileThumb    = Filemanager::getThumbnail($this->fileType, $this->src, "{$this->thumbnailSize[0]}px", "{$this->thumbnailSize[1]}px");
 			$toolbox      = $this->renderToolbox();
