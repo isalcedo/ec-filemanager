@@ -26,7 +26,7 @@ class Filemanager {
     public static function getThumbnail($fileType, $src, $height = '', $width = '') {
         $thumbnailSize = \Yii::$app->getModule('filemanager')->thumbnailSize;
 
-        if ($fileType == 'image') {
+        if ($fileType == 'image' || $fileType == 'image/svg+xml') {
             return Html::img($src, ['class' => 'img-responsive']);
         }
 
