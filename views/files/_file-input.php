@@ -10,6 +10,7 @@ if ($uploadType == \isalcedo\filemanager\components\Filemanager::TYPE_MODAL) {
 }
 
 $form = ActiveForm::begin([
+			'enableClientValidation'=>false,
             'action' => \Yii::$app->urlManager->createUrl(['/filemanager/files/upload']),
             'id' => 'fm-upload-form',
             'options' => ['enctype' => 'multipart/form-data'] // important
@@ -32,14 +33,14 @@ SCRIPT;
 echo $form->field($model, 'upload_file[]')->widget(FileInput::classname(), [
     'options' => [
         'multiple' => $multiple,
-        'accept' => implode(',', \Yii::$app->controller->module->acceptedFilesType)
+        'accept' => implode(',', \Yii::$app->controller->module->acceptedFilesType),
     ],
     'pluginOptions' => [
         'uploadUrl' => Url::to(['/filemanager/files/upload']),
         'browseClass' => 'btn btn-sm btn-success',
         'uploadClass' => 'btn btn-sm btn-info',
         'removeClass' => 'btn btn-sm btn-danger',
-        'maxFileCount' => $maxFileCount
+        'maxFileCount' => $maxFileCount,
     ],
     'pluginEvents' => [
         'filepreupload' => $script

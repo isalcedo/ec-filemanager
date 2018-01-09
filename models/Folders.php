@@ -61,29 +61,6 @@
 			return $this->hasMany(Files::className(), ['folder_id' => 'folder_id']);
 		}
 
-		/*
-			  ["manufacturers_media"]=>
-			  array(2) {
-			    ["fuyue"]=>
-			    array(0) {
-			    }
-			    ["radwag"]=>
-			    string(6) "radwag"
-			  }
-			  ["nivel_1"]=>
-			  array(1) {
-			    ["nivel_2"]=>
-			    array(1) {
-			      ["nivel_3"]=>
-			      string(7) "nivel_3"
-			    }
-			  }
-			  ["product_media"]=>
-			  array(0) {
-			  }
-		 */
-
-
 		private function ToUl($input)
 		{
 			$list = '<ul>';
