@@ -424,7 +424,8 @@
 				'uploadType'   => Filemanager::TYPE_MODAL,
 				'viewFrom'     => 'modal'
 			]);
-			\Yii::$app->end();
+			die;
+			//\Yii::$app->end();
 		}
 
 		public function actionUse()
