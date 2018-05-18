@@ -149,7 +149,7 @@
 				unset($route[$key]);
 				$key   = array_search('public', $route);
 				unset($route[$key]);
-				$route  = join('/', $route);
+				$route  = '/' . join('/', $route);
 				$domain = $route . ltrim($this->object_url, '/');
 			}
 			else
