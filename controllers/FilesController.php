@@ -307,7 +307,7 @@
 					}
 					else
 					{
-						$model->object_url = '/' . $folder->path . '/';
+						$model->object_url = $folder->path . '/';
 					}
 					//Implementing public_path
 					if ($this->module->public_path)
