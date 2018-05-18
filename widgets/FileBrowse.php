@@ -99,6 +99,7 @@
 					{
 						$route = explode('/', $module->public_path);
 						$key   = array_search('public_html', $route);
+						$key   = array_search('public', $route);
 						unset($route[$key]);
 						$route  = join('/', $route);
 						$domain = $route . ltrim($file->object_url, '/');
@@ -117,6 +118,7 @@
 					{
 						$route = explode('/', $module->public_path);
 						$key   = array_search('public_html', $route);
+						$key   = array_search('public', $route);
 						unset($route[$key]);
 						$route  = join('/', $route);
 						$domain = $route . ltrim($file->object_url, '/');
