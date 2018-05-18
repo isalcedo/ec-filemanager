@@ -12,8 +12,8 @@ class Filemanager {
 
     public static function renderEditUploadedBar($fileId, $objectUrl, $filename, $fileType) {
         $img = FilemanagerHelper::getFile($fileId);
-        $src = $img['img_thumb_src'];
-        //$src = $objectUrl . $filename;
+        //$src = $img['img_thumb_src'];
+        $src = '/uploads' . $objectUrl . $filename;
         $file = static::getThumbnail($fileType, $src, "20px", "30px");
         $content_1 = Html::tag('h6', $filename, ['class' => 'separator-box-title']);
         $content_2 = Html::tag('div', Html::a(Yii::t('filemanager', 'Edit'), ['/filemanager/files/update', 'id' => $fileId], ['target' => '_blank']), ['class' => 'separator-box-toolbar']);
