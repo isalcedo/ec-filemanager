@@ -102,7 +102,7 @@
 						unset($route[$key]);
 						$key   = array_search('public', $route);
 						unset($route[$key]);
-						$route  = join('/', $route);
+						$route  = '/' . join('/', $route);
 						$domain = $route . ltrim($file->object_url, '/');
 						$src    = $domain . $file->thumbnail_name;
 					}
@@ -122,7 +122,7 @@
 						unset($route[$key]);
 						$key   = array_search('public', $route);
 						unset($route[$key]);
-						$route  = join('/', $route);
+						$route  =  '/' . join('/', $route);
 						$domain = $route . ltrim($file->object_url, '/');
 						$src    = $domain . $file->src_file_name;
 					}
