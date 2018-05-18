@@ -147,6 +147,8 @@
 				$route = explode('/', $module->public_path);
 				$key   = array_search('public_html', $route);
 				unset($route[$key]);
+				$key   = array_search('public', $route);
+				unset($route[$key]);
 				$route  = join('/', $route);
 				$domain = $route . ltrim($this->object_url, '/');
 			}
